@@ -361,7 +361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22470916, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.61576843
+      value: -0.6157532
       objectReference: {fileID: 0}
     - target: {fileID: 22496010, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
       propertyPath: m_AnchorMin.y
@@ -491,6 +491,18 @@ PrefabInstance:
       propertyPath: insertNamePanel
       value: 
       objectReference: {fileID: 873116531}
+    - target: {fileID: 8286744, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1da1cf7e6aaffe748b0e18587497096f, type: 3}
+    - target: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: titleMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1da1cf7e6aaffe748b0e18587497096f, type: 3}
+    - target: {fileID: 11423466, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
+      propertyPath: mainMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 1da1cf7e6aaffe748b0e18587497096f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 3}
 --- !u!224 &250827204 stripped
@@ -1020,6 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969983738ea771e469385a11ed58d024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startOptions: {fileID: 0}
 --- !u!114 &1026689711 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 11432662, guid: 45616935e4fe10f48b62da1347801a16,
