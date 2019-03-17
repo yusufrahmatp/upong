@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
         private Transform target;
+        public AudioSource audio;
 
 
         private void Start()
@@ -22,6 +23,7 @@ namespace UnityStandardAssets.Vehicles.Ball
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
             target = GameObject.FindWithTag("MainCamera").transform;
             Move(target.forward, false);
+            audio = GetComponent<AudioSource>();
         }
 
 
@@ -45,6 +47,11 @@ namespace UnityStandardAssets.Vehicles.Ball
                 // ... add force in upwards.
                 m_Rigidbody.AddForce(Vector3.up*m_JumpPower, ForceMode.Impulse);
             }
+        }
+
+        void OnTriggerEnter (Collider collider)
+        {
+            audio.Play(0);
         }
     }
 }
