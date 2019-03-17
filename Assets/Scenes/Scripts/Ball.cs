@@ -15,6 +15,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         private Rigidbody m_Rigidbody;
         private Transform target;
         public AudioSource audio;
+        public GameObject ringObject;
 
         private GameController gameController;
 
@@ -26,6 +27,7 @@ namespace UnityStandardAssets.Vehicles.Ball
             target = GameObject.FindWithTag("MainCamera").transform;
             Move(target.forward, false);
             audio = GetComponent<AudioSource>();
+            ringObject = GameObject.Find("Ring");
 
             GameObject gameControllerObject = GameObject.FindWithTag("GameController");
             if (gameControllerObject != null)
@@ -65,6 +67,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         {
             audio.Play(0);
             gameController.AddScore(1);
+            ringObject.transform.transform.position = new Vector3(UnityEngine.Random.Range(-22.0f, 22.0f), UnityEngine.Random.Range(5.0f, 20.0f), UnityEngine.Random.Range(-40.0f, 40.0f));
         }
     }
 }
