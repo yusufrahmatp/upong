@@ -9,18 +9,30 @@ namespace UnityGame
     public class GameController : MonoBehaviour
     {
         public Text scoreText;
+        public Text timerText;
+
+        public float targetTime = 60.0f;
+        private float counterTime;
         private int score;
 
         // Start is called before the first frame update
         void Start()
         {
             UpdateScore(0);
+            counterTime = targetTime;
         }
 
         // Update is called once per frame
         void Update()
         {
+            counterTime -= Time.deltaTime;
 
+            if (counterTime <= 0.0f)
+            {
+                timerEnded();
+            }
+
+            timerText.text = "Time: " + counterTime.ToString("f1");
         }
 
         public void AddScore(int scoreValue)
@@ -32,6 +44,11 @@ namespace UnityGame
         {
             score = newScore;
             scoreText.text = "Score: " + score;
+        }
+
+        private void timerEnded()
+        {
+            //Game Over
         }
     }
 }
