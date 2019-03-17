@@ -29,7 +29,7 @@ namespace UnityGame
 
             if (counterTime <= 0.0f)
             {
-                timerEnded();
+                // timerEnded();
             }
 
             timerText.text = "Time: " + counterTime.ToString("f1");
