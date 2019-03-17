@@ -49,6 +49,10 @@ namespace UnityGame
         private void timerEnded()
         {
             //Game Over
+            PlayerPrefs.SetInt("score", score);
+            PlayerPrefs.Save();
+            Destroy(GameObject.Find("Menu UI"));
+            SceneManager.LoadScene("MainMenuScene");
         }
     }
 }
