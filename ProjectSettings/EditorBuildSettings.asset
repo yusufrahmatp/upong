@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UPong/SampleScene.unity
     guid: 68e406f02366d20458c3b177a1dfc6e0
+  - enabled: 1
+    path: Assets/UPong/HighScoreScene.unity
+    guid: 8e38831f95191574da1cf29c09831c60
   m_configObjects: {}

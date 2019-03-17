@@ -11,7 +11,7 @@ namespace UnityGame
         public Text scoreText;
         public Text timerText;
 
-        public float targetTime = 200.0f;
+        public float targetTime = 60.0f;
         private float counterTime;
         private int score;
 

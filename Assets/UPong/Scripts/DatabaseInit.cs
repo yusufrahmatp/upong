@@ -13,8 +13,13 @@ public class DatabaseInit : MonoBehaviour
     private void Start()
     {
         dbPath = "URI=file:" + Application.persistentDataPath + "/HighscoreDatabase.db";
+
         // CreateSchema();
+        // ClearHighscore();
+        // InsertScore("Ilham", 9999);
+
         InsertScore(PlayerPrefs.GetString("name", "NONAME"), PlayerPrefs.GetInt("score", 0));
+        
         GetHighScores(10);
     }
 
@@ -63,6 +68,21 @@ public class DatabaseInit : MonoBehaviour
 
                 var result = cmd.ExecuteNonQuery();
                 Debug.Log("insert score: " + result);
+            }
+        }
+    }
+
+    public void ClearHighscore()
+    {
+        using (var conn = new SqliteConnection(dbPath))
+        {
+            conn.Open();
+            using (var cmd = conn.CreateCommand())
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "DELETE FROM high_score WHERE 1=1";
+                var result = cmd.ExecuteNonQuery();
+                Debug.Log("delete all high_score row:" + result);
             }
         }
     }
