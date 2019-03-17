@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+namespace UnityGame
 {
     public class GameController : MonoBehaviour
     {

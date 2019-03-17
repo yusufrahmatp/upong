@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityGame;
 
 namespace UnityStandardAssets.Vehicles.Ball
 {
@@ -15,6 +16,8 @@ namespace UnityStandardAssets.Vehicles.Ball
         private Transform target;
         public AudioSource audio;
 
+        private GameController gameController;
+
         private void Start()
         {
             m_Rigidbody = GetComponent<Rigidbody>();
@@ -23,6 +26,16 @@ namespace UnityStandardAssets.Vehicles.Ball
             target = GameObject.FindWithTag("MainCamera").transform;
             Move(target.forward, false);
             audio = GetComponent<AudioSource>();
+
+            GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+            if (gameControllerObject != null)
+            {
+                gameController = gameControllerObject.GetComponent<GameController>();
+            }
+            if (gameController == null)
+            {
+                Debug.Log("Cannot find 'GameController' script!");
+            }
         }
 
 
@@ -51,6 +64,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         void OnTriggerEnter (Collider collider)
         {
             audio.Play(0);
+            gameController.AddScore(1);
         }
     }
 }
