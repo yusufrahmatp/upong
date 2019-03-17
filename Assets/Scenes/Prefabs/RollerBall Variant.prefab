@@ -128,6 +128,8 @@ MonoBehaviour:
   m_MaxAngularVelocity: 100
   m_JumpPower: 4
   audio: {fileID: 6502165512040825303}
+  ringObject: {fileID: 6095004781801249620, guid: e33d39fc87cc08443abedc078ba423df,
+    type: 3}
 --- !u!114 &1080256283489944573
 MonoBehaviour:
   m_ObjectHideFlags: 0
