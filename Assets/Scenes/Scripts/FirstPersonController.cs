@@ -47,6 +47,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public Transform shotSpawn;
         public float fireRate;
 
+        private GameController gameController;
+
         // Use this for initialization
         private void Start()
         {
@@ -60,6 +62,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+            if (gameControllerObject != null)
+            {
+                gameController = gameControllerObject.GetComponent<GameController>();
+            }
+            if (gameController == null)
+            {
+                Debug.Log("Cannot find 'GameController' script!");
+            }
         }
 
 
@@ -91,6 +103,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 nextShot = Time.time + fireRate;
                 Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                gameController.AddScore(1);
             }
         }
 
