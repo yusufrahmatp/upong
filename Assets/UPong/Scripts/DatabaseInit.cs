@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DatabaseInit : MonoBehaviour
 {
     private string dbPath;
+    public Text highscoreText;
 
     private void Start()
     {
@@ -82,13 +84,17 @@ public class DatabaseInit : MonoBehaviour
                 });
 
                 Debug.Log("scores (begin)");
+                highscoreText.text = "";
                 var reader = cmd.ExecuteReader();
+                int count = 1;
                 while (reader.Read())
                 {
                     var id = reader.GetInt32(0);
                     var highScoreName = reader.GetString(1);
                     var score = reader.GetInt32(2);
-                    var text = string.Format("{0}: {1} [#{2}]", highScoreName, score, id);
+                    var text = string.Format("{0}. {1} [#{2}]\n", count, highScoreName, score);
+                    highscoreText.text += text;
+                    count++;
                     Debug.Log(text);
                 }
                 Debug.Log("scores (end)");
