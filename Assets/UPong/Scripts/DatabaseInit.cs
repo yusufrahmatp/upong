@@ -14,7 +14,7 @@ public class DatabaseInit : MonoBehaviour
     {
         dbPath = "URI=file:" + Application.persistentDataPath + "/HighscoreDatabase.db";
         // CreateSchema();
-        // InsertScore("Ilham", 9999);
+        InsertScore(PlayerPrefs.GetString("name", "NONAME"), PlayerPrefs.GetInt("score", 0));
         GetHighScores(10);
     }
 
@@ -92,7 +92,7 @@ public class DatabaseInit : MonoBehaviour
                     var id = reader.GetInt32(0);
                     var highScoreName = reader.GetString(1);
                     var score = reader.GetInt32(2);
-                    var text = string.Format("{0}. {1} [#{2}]\n", count, highScoreName, score);
+                    var text = string.Format("{0}. {1} ~ {2}\n", count, highScoreName, score);
                     highscoreText.text += text;
                     count++;
                     Debug.Log(text);

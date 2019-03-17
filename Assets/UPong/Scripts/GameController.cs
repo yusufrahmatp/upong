@@ -11,7 +11,7 @@ namespace UnityGame
         public Text scoreText;
         public Text timerText;
 
-        public float targetTime = 60.0f;
+        public float targetTime = 200.0f;
         private float counterTime;
         private int score;
 
@@ -29,7 +29,7 @@ namespace UnityGame
 
             if (counterTime <= 0.0f)
             {
-                // timerEnded();
+                timerEnded();
             }
 
             timerText.text = "Time: " + counterTime.ToString("f1");
@@ -51,8 +51,8 @@ namespace UnityGame
             //Game Over
             PlayerPrefs.SetInt("score", score);
             PlayerPrefs.Save();
-            Destroy(GameObject.Find("Menu UI"));
-            SceneManager.LoadScene("MainMenuScene");
+            // Destroy(GameObject.Find("Menu UI"));
+            SceneManager.LoadScene("HighScoreScene");
         }
     }
 }
