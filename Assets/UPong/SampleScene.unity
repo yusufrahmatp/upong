@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1915017175}
   timerText: {fileID: 695497776}
-  targetTime: 5
+  targetTime: 30
 --- !u!1 &87972413 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9ced0c52dc1504d4da20513052fdc602,
