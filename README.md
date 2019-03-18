@@ -11,7 +11,7 @@ Built for ITB-IF3111 class assignment.
 ## Display
 <p align="center"> <img src="Photos/MainMenu.png" alt="main_menu" width="250"/>  
 <img src="Photos/Game.png" alt="game" width="250"/>
-<img src="Photos/Highscore.png" alt="game" width="250"/></p> 
+<img src="Photos/Highscore.png" alt="highscore" width="250"/></p> 
 
 ## How to Install
 1. Open project through unity
