@@ -14,12 +14,12 @@ public class DatabaseInit : MonoBehaviour
     {
         dbPath = "URI=file:" + Application.persistentDataPath + "/HighscoreDatabase.db";
 
-        // CreateSchema();
+        CreateSchema();
         // ClearHighscore();
         // InsertScore("Ilham", 9999);
 
         InsertScore(PlayerPrefs.GetString("name", "NONAME"), PlayerPrefs.GetInt("score", 0));
-        
+        PlayerPrefs.DeleteAll();
         GetHighScores(10);
     }
 
